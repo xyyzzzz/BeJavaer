@@ -1,7 +1,7 @@
 package datastructure.binarytree;
 
 /**
- * @author ChNan
+ * @author CNan
  */
 public class BinaryTree {
     /**
