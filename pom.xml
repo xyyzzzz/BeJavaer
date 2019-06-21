@@ -18,6 +18,8 @@
         <module>netty</module>
         <module>shangxuetang</module>
         <module>java-base</module>
+        <module>learning</module>
+        <module>java-concurrent</module>
     </modules>
 
     <build>

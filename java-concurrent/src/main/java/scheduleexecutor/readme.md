@@ -1,0 +1,6 @@
+可调度线程池
+
+ScheduleThreadPoolExecutor
+
+继承了ThreadPoolExecutor
+实现了ScheduleExecutorService
