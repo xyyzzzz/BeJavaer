@@ -16,8 +16,6 @@ public class ThreadFactoryTest {
             Thread thread = factory.newThread(new CustomizeTask(i));
             thread.start();
         }
-        logger.info("Factory stats:\n");
-        logger.info("%s\n", factory.getStas());
 
         logger.info("main thread end");
     }

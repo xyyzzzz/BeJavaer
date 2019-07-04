@@ -1,3 +1,5 @@
+package basic;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -21,6 +23,7 @@ public class IOServer {
                     // (2) 每一个新的连接都创建一个线程，负责读取数据
                     new Thread(() -> {
                         try {
+                            System.out.println("current thread is "+Thread.currentThread().getName());
                             byte[] data = new byte[1024];
                             InputStream inputStream = socket.getInputStream();
                             while (true) {
@@ -33,7 +36,7 @@ public class IOServer {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                    }).start();
+                    },"FWQ"+System.currentTimeMillis()).start();
 
                 } catch (IOException e) {
                     e.printStackTrace();
