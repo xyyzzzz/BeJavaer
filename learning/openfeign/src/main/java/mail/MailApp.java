@@ -1,5 +1,7 @@
 package mail;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Feign;
 import feign.Logger;
 import feign.Request;
@@ -7,15 +9,9 @@ import feign.Retryer;
 import feign.httpclient.ApacheHttpClient;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
-import java.util.Optional;
-
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tobe.core.response.Result;
-import com.tobe.mail.Protocol;
-import com.tobe.utils.JSONUtil;
-
 import org.junit.Test;
+
+import java.util.Optional;
 
 public class MailApp {
 
@@ -52,7 +48,7 @@ public class MailApp {
             .ofNullable(result)
             .filter(o -> o.getRet() >= 0)
             .ifPresent(o -> {
-                    System.out.print(JSONUtil.serialize(o));
+                    System.out.print(o.toString());
                 }
             );
     }

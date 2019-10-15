@@ -16,10 +16,10 @@
 
     <modules>
         <module>netty</module>
-        <module>shangxuetang</module>
         <module>java-base</module>
         <module>learning</module>
         <module>java-concurrent</module>
+        <module>test</module>
     </modules>
 
     <build>
