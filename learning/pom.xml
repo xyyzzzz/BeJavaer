@@ -17,6 +17,7 @@
         <module>openfeign</module>
         <module>java-learning</module>
         <module>spring-cloud-feign-learning</module>
+        <module>netty-learning</module>
     </modules>
 
     <properties>

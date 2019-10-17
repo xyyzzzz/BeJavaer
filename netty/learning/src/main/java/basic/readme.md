@@ -1,2 +1,0 @@
-这个就是最原始的客户端->服务端通信模型
-用serverscoeket和socket进行通信
