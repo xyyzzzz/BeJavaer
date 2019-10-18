@@ -13,13 +13,10 @@ public class HelloWorldClient5 {
     private static final int PORT= 8080;
 
     public static void main(String[] args){
-        for(int i=0;i<100;i++){
-            System.out.println("this is "+i);
-            new HelloWorldClient5().start(HOST,PORT);
-        }
+        new HelloWorldClient5().start(HOST,PORT,"钱七");
     }
 
-    public void start(String host, int port) {
+    public void start(String host, int port,String name) {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap client = new Bootstrap().group(group).channel(NioSocketChannel.class)
@@ -33,7 +30,7 @@ public class HelloWorldClient5 {
                         }
                     });
             ChannelFuture future = client.connect(host, port).sync();
-            future.channel().writeAndFlush("Hello Netty Server ,I am a netty client");
+            future.channel().writeAndFlush("Hello Netty Server ,I am a netty client "+ name);
             future.channel().closeFuture().sync();
         } catch (Exception e) {
             e.printStackTrace();
