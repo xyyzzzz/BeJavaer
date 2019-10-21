@@ -8,13 +8,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
-public class HelloWorldClient5 {
-    private static final String HOST = "127.0.0.1";
-    private static final int PORT= 8080;
-
-    public static void main(String[] args){
-        new HelloWorldClient5().start(HOST,PORT,"钱七");
-    }
+public class HelloWorldClientMain {
 
     public void start(String host, int port,String name) {
         EventLoopGroup group = new NioEventLoopGroup();
