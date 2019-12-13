@@ -1,4 +1,4 @@
-package helloworld;
+package helloworld.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -24,7 +24,9 @@ public class HelloWorldClientMain {
                         }
                     });
             ChannelFuture future = client.connect(host, port).sync();
-            future.channel().writeAndFlush("Hello Netty Server ,I am a netty client "+ name);
+            String message = "I am a netty client "+ name;
+            System.out.println("Client write message: "+ message);
+            future.channel().writeAndFlush(message);
             future.channel().closeFuture().sync();
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,12 +38,12 @@ public class HelloWorldClientMain {
     public static class HelloWorldClientHandler extends ChannelInboundHandlerAdapter {
         @Override
         public void channelActive(ChannelHandlerContext ctx) throws Exception {
-            System.out.println("HelloWorldClientHandler Active");
+            System.out.println("Client Active ");
         }
 
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-            System.out.println("HelloWorldClientHandler read Message:"+msg);
+            System.out.println("Client read Message: "+msg);
         }
     }
 }
